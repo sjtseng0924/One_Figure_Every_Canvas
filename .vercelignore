@@ -2,6 +2,8 @@
 .github/
 .vercel/
 node_modules/
+.local/
+scripts/
 .env
 .env.*
 *.log

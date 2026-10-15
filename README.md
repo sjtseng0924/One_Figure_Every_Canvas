@@ -59,7 +59,11 @@ credentials or access tokens.
 | --- | --- |
 | `index.html` | Title, authors, links, paper text, and section structure |
 | `static/css/index.css` | Layout and responsive styles |
+| `static/css/theme.css` | Shared visual design across all sections |
+| `static/css/method.css` | Method stage presentation styles |
 | `static/js/index.js` | Result data, carousels, comparisons, and research tables |
+| `static/js/method.js` | Independent Method stage playback and fixed captions |
+| `static/js/method-ppt.js` | Generated PPT artwork and original rich feedback |
 | `static/images/` | Teasers, method figure, results, ablations, and style transfer |
 | `static/pdfs/paper.pdf` | Public paper PDF |
 | `vercel.json` | Static deployment configuration |
@@ -70,6 +74,58 @@ credentials or access tokens.
 Open `index.html` in your browser. A development server is not required.
 The static layout is also compatible with GitHub Pages; `.nojekyll` is retained
 for that purpose.
+
+## Animated Method
+
+The Method section has four independently selected tabs: **Overview, (a) Parse Stage,
+(b) Style Stage, and (c) Layout Stage**. The Overview builds in approximately four seconds.
+Each stage stops on its complete figure and stays selected until the visitor
+chooses another tab. Completed stages remain fully visible when revisited.
+Parse, Style, and Layout each finish in approximately five seconds. Style's
+Original, Parsed, Iteration 1, and Iteration 2 diagrams share a single row.
+Iteration labels sit above their figures as column headings. Critic feedback
+uses the site's typography and grouped check/suggestion sections, preserving
+all source wording, numbered items, and formulas.
+Feedback sits in a shared row below the figures: two wide columns for Parse
+and Layout, and one compact row for Style. Red and magenta text keep the exact
+colors of their corresponding PPT annotations, including inherited paragraph
+colors. The teaser retains its original grouping contour around the outputs.
+Each stage has one fixed caption; there is no bottom timeline or Replay control.
+The Play/Pause button can pause or restart the selected stage.
+Previous/Next controls and the connected stage tabs provide manual navigation.
+
+The Method player has one lavender-edged outer frame, with a divider and a
+separate warm-white caption area below the animation. Individual figures have
+no added CSS borders, shadows, or card backgrounds. The original
+colored PPT annotations are preserved within the artwork. Shared styling uses
+indigo and lavender details on warm white, with readable ink colors. Lavender
+color fields are reserved for the hero; all body sections share warm white.
+Routed heading marks, short node trails, connected contribution bullets, and
+paragraph rules distinguish sections without colored bands or picture cards.
+The four hero links share a lavender base and turn deep purple on hover or
+keyboard focus. Data tables use a raised lavender-edged frame. Faint flowchart
+routes in the page margins animate small data signals; reduced-motion
+preferences keep these decorations static.
+
+Playback pauses when the section leaves the viewport or the browser tab is
+hidden. On phones, the figures scroll horizontally and follow the current
+iteration during playback. Reduced-motion preferences show complete, paused
+figures; pressing Play explicitly opts into the sequence.
+
+`static/js/method.js` contains timings and captions. Original rich text, math,
+images, enlarged regions, and every colored annotation are extracted from the
+PPTs into `static/js/method-ppt.js` and `static/images/method/ppt/`. The generator
+checks that all 27 Parse, 15 Style, and 22 Layout colored annotations are retained.
+Overview connectors are individual complete PPT shapes, appearing with their
+destination stage. No PowerPoint or external player is needed by the website.
+To regenerate the assets, install Pillow and run:
+
+```sh
+python scripts/build-method-ppt.py --source-dir PATH_TO_PPTS
+```
+
+The source directory must contain `overview.pptx`, `parse-stage.pptx`,
+`style-stage.pptx`, and `layout-stage (1).pptx`.
 
 ## Acknowledgments
 

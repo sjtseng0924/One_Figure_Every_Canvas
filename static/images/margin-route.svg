@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="still" width="128" height="360" viewBox="0 0 128 360" fill="none">
+  <style>@keyframes data-flow{to{stroke-dashoffset:-420}}@keyframes port-glow{0%,100%{opacity:.45}50%{opacity:1}}.data-flow{stroke-dasharray:7 413;animation:data-flow 11s linear infinite}.port-glow{animation:port-glow 5s ease-in-out infinite}:root:target .data-flow,:root:target .port-glow{animation:none}@media(prefers-reduced-motion:reduce){.data-flow,.port-glow{animation:none}}</style>
+  <g stroke="#b0a0ca" stroke-width="1.1" opacity=".8">
+    <path d="M-12 38H36Q48 38 48 50V104Q48 116 60 116H101M-12 268H12Q24 268 24 256V192Q24 180 36 180H80"/>
+    <path d="M48 116V314Q48 326 60 326H110" stroke-dasharray="3 6"/>
+    <rect x="81" y="170" width="21" height="21" rx="4"/>
+    <path d="m95 111 6 5-6 5M67 38h20m-5-5 5 5-5 5"/>
+    <path d="m104 319 7 7-7 7"/>
+    <rect x="13" y="28" width="25" height="20" rx="4" fill="#fffefd"/>
+    <path d="m48 74 12 12-12 12-12-12Z" fill="#fffefd"/>
+    <path d="M60 86h21a10 10 0 0 1 10 10v20M48 228h40a8 8 0 0 1 8 8v24M24 280h40a8 8 0 0 1 8 8v38"/>
+    <rect x="83" y="260" width="26" height="24" rx="4" fill="#fffefd"/>
+    <path d="m87 111 4 5 4-5M92 253l4 6 4-6M17 36h9m-9 5h14M90 268h11m-11 5h7"/>
+    <circle cx="72" cy="326" r="5" fill="#fffefd"/>
+  </g>
+  <circle class="port-glow" cx="48" cy="116" r="4" fill="#967bbd"/>
+  <circle cx="24" cy="222" r="3.5" fill="#c28c81"/>
+  <circle cx="48" cy="116" r="8" stroke="#b4b0db" opacity=".45"/>
+  <path d="M89 178h5m-2.5-2.5v5M70 272h7m-3.5-3.5v7" stroke="#9a9fc8" stroke-linecap="round"/>
+  <g stroke="#9b80bf" stroke-width="2" stroke-linecap="round"><path class="data-flow" d="M-12 268H12Q24 268 24 256V192Q24 180 36 180H80"/><path class="data-flow" style="animation-delay:-5.5s" d="M48 108V228h40a8 8 0 0 1 8 8v24"/></g>
+</svg>

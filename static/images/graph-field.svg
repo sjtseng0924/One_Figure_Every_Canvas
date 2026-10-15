@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="still" viewBox="0 0 1600 680" fill="none">
+  <style>@keyframes route-signal{to{stroke-dashoffset:-950}}@keyframes node-beacon{0%,100%{opacity:.45}50%{opacity:1}}.route-signal{stroke-dasharray:8 942;animation:route-signal 14s linear infinite}.route-node{animation:node-beacon 5s ease-in-out infinite}.route-node:nth-child(even){animation-delay:-2.5s}:root:target .route-signal,:root:target .route-node{animation:none}@media(prefers-reduced-motion:reduce){.route-signal,.route-node{animation:none}}</style>
+  <g stroke="#9881c0" stroke-width="1.1" opacity=".48">
+    <path d="M-40 145H154Q178 145 178 169V252Q178 276 202 276H330M-80 523H195Q219 523 219 499V400Q219 376 243 376H333"/>
+    <path d="M136 275V77Q136 53 160 53H412M136 376V605Q136 629 160 629H441"/>
+    <path d="M1268 271H1364Q1388 271 1388 247V161Q1388 137 1412 137H1660M1268 377H1438Q1462 377 1462 401V500Q1462 524 1486 524H1650"/>
+    <path d="M1428 271V62H1190M1348 377V620H1188"/>
+    <rect x="53" y="275" width="164" height="102" rx="13"/>
+    <rect x="-40" y="89" width="112" height="112" rx="11"/>
+    <rect x="-31" y="482" width="111" height="84" rx="11"/>
+    <rect x="323" y="260" width="42" height="32" rx="4"/>
+    <rect x="323" y="361" width="42" height="32" rx="4"/>
+    <rect x="1202" y="249" width="68" height="44" rx="5"/>
+    <rect x="1202" y="356" width="68" height="44" rx="5"/>
+    <rect x="1478" y="84" width="174" height="106" rx="13"/>
+    <rect x="1494" y="456" width="112" height="145" rx="13"/>
+    <path d="m312 269 10 7-10 7m0 86 10 7-10 7m967-113 10 7-10 7m0 92 10 7-10 7"/>
+    <path d="M76 299H139V317H196M76 351H104V333H166V351H196M1522 111H1561V151H1617M1522 151H1541V131H1617"/>
+  </g>
+  <g fill="#9780c2"><circle class="route-node" cx="136" cy="275" r="4"/><circle class="route-node" cx="1388" cy="210" r="4"/><circle class="route-node" cx="412" cy="53" r="3"/><circle class="route-node" cx="1348" cy="620" r="3"/></g>
+  <g fill="#d0a592"><circle cx="219" cy="454" r="4"/><circle cx="1462" cy="445" r="4"/><circle cx="441" cy="629" r="3"/><circle cx="1190" cy="62" r="3"/></g>
+  <g stroke="#c1cce7" opacity=".28"><path d="M76 299h63v18h57M1522 111h39v40h56" stroke-width="5"/></g>
+  <g stroke="#9a78c3" stroke-width="2" stroke-linecap="round"><path class="route-signal" d="M-40 145H154Q178 145 178 169V252Q178 276 202 276H330"/><path class="route-signal" style="animation-delay:-7s" d="M1268 377H1438Q1462 377 1462 401V500Q1462 524 1486 524H1650"/></g>
+</svg>
