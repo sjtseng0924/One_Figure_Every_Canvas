@@ -158,15 +158,20 @@ function renderTeasers() {
     outputs.appendChild(legend);
     const ratios = document.createElement("div");
     ratios.className = "teaser-ratios";
+    const wide = createTeaserFigure(example, example.outputs[0][0], example.outputs[0][1]);
+    wide.classList.add("teaser-wide");
     example.outputs.slice(1).forEach(([ratio, file]) => {
       const figure = createTeaserFigure(example, ratio, file);
       figure.dataset.ratio = ratio;
       ratios.appendChild(figure);
     });
     outputs.appendChild(ratios);
-    const wide = createTeaserFigure(example, example.outputs[0][0], example.outputs[0][1]);
-    wide.classList.add("teaser-wide");
     outputs.appendChild(wide);
+    [wide, ...ratios.children].forEach((figure, position) => {
+      const [ratio, file] = example.outputs[position];
+      window.attachDrawioEdit?.(figure.querySelector(".figure-media"), teaserPath(example, file),
+        `${example.title} · ${ratio}`, "Teaser examples");
+    });
     composition.appendChild(outputs);
     slide.appendChild(composition);
     grid.appendChild(slide);
@@ -332,7 +337,10 @@ function renderExplorer() {
     grid.className = "ratio-grid";
     grid.appendChild(createOriginalCard(item.id));
     RATIOS.filter((ratio) => ratio.baseline !== false).forEach((ratio) => {
-      grid.appendChild(createRatioCard(ratio.label, oursPath(item.id, ratio.key)));
+      const card = createRatioCard(ratio.label, oursPath(item.id, ratio.key));
+      window.attachDrawioEdit?.(card.querySelector(".figure-media"), oursPath(item.id, ratio.key),
+        `${item.id} · ${ratio.label}`, "Qualitative results (Ours)");
+      grid.appendChild(card);
     });
     slide.appendChild(grid);
     track.appendChild(slide);
