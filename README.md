@@ -95,8 +95,10 @@ The Play/Pause button can pause or restart the selected stage.
 Previous/Next controls and the connected stage tabs provide manual navigation.
 
 The Method player has one lavender-edged outer frame, with a divider and a
-separate warm-white caption area below the animation. Individual figures have
-no added CSS borders, shadows, or card backgrounds. The original
+separate warm-white caption area below the animation. Individual Method figures
+have no added CSS borders, shadows, or card backgrounds. Showcase images in the
+teaser, results, ablations, and style transfer use a 1px black canvas outline;
+the style comparison slider has one outline around its shared canvas. The original
 colored PPT annotations are preserved within the artwork. Shared styling uses
 indigo and lavender details on warm white, with readable ink colors. Lavender
 color fields are reserved for the hero; all body sections share warm white.

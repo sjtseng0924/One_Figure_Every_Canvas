@@ -47,11 +47,15 @@ h3 { color: #3c4968; letter-spacing: -.02em; }
 .teaser-figure figcaption, .ratio-card h5, .comparison-figure figcaption, .comparison-figure.ours-figure figcaption, .style-comparison figcaption, .method-title h4, .ours-panel .method-title h4 { color: #394c70; font-weight: 600; }
 .teaser-caption { color: #4d5b75; font-size: 15px; line-height: 1.85; }
 
-/* Figures keep their own pixels and original PPT annotations; no added framing. */
+/* Keep the artwork intact; mark showcase canvas edges with a thin black line. */
 .teaser-figure img, .result-image, .comparison-figure img,
 .comparison-figure.ours-figure img, .original-frame img, .method-figure img,
 .style-reference img, .image-holder, .image-holder .figure-media, .swap-media,
 .before-after { border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.teaser-figure img, .result-image, .comparison-figure img,
+.comparison-figure.ours-figure img, .original-frame img,
+.before-after { border: 1px solid #111; border-radius: 0; }
+.hover-swap:is(:hover, :focus) .result-image { border-color: #111; }
 .image-holder { padding: 0; }
 .hover-swap .image-holder { padding-top: 28px; }
 .comparison-hint.is-ours { background: #6d7fae; border-radius: 3px; }
