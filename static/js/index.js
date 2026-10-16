@@ -168,9 +168,7 @@ function renderTeasers() {
     outputs.appendChild(ratios);
     outputs.appendChild(wide);
     [wide, ...ratios.children].forEach((figure, position) => {
-      const [ratio, file] = example.outputs[position];
-      window.attachDrawioEdit?.(figure.querySelector(".figure-media"), teaserPath(example, file),
-        `${example.title} · ${ratio}`, "Teaser examples");
+      window.attachDrawioEdit?.(figure.querySelector(".figure-media"), teaserPath(example, example.outputs[position][1]));
     });
     composition.appendChild(outputs);
     slide.appendChild(composition);
@@ -338,8 +336,7 @@ function renderExplorer() {
     grid.appendChild(createOriginalCard(item.id));
     RATIOS.filter((ratio) => ratio.baseline !== false).forEach((ratio) => {
       const card = createRatioCard(ratio.label, oursPath(item.id, ratio.key));
-      window.attachDrawioEdit?.(card.querySelector(".figure-media"), oursPath(item.id, ratio.key),
-        `${item.id} · ${ratio.label}`, "Qualitative results (Ours)");
+      window.attachDrawioEdit?.(card.querySelector(".figure-media"), oursPath(item.id, ratio.key));
       grid.appendChild(card);
     });
     slide.appendChild(grid);

@@ -12,29 +12,14 @@
   .drawio-edit span { display: none; }
 }
 
-.playground { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 28px; }
-.playground-panel { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.playground-label { margin: 8px 0 0; color: #5d6983; font-size: 12px; font-weight: 600; letter-spacing: .04em; line-height: 1.5; text-transform: uppercase; }
-.playground-label:first-child { margin-top: 0; }
-#drawioSample { width: 100%; height: 38px; padding: 0 8px; border: 1px solid #d1c9e2; border-radius: 7px; background: #fff; color: var(--ink); font-size: 13px; }
-.playground-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 7px 12px; border: 1px solid #c8b9de; border-radius: 7px; background: #f4effb; color: #584276; font-size: 13px; font-weight: 600; transition: background .16s, color .16s, border-color .16s; }
-.playground-button:hover:not(:disabled) { border-color: #59318a; background: #59318a; color: #fff; }
-.playground-button:disabled { opacity: .5; cursor: not-allowed; }
-.playground-button[hidden] { display: none; }
-.playground-note, .playground-status { margin: 0; color: #4c5971; font-size: 13px; line-height: 1.65; }
-.playground-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: auto; padding-top: 8px; }
-.playground-actions:has(> [hidden]) { grid-template-columns: minmax(0, 1fr); }
-.playground-status { min-height: 21px; color: #3f527b; font-weight: 600; overflow-wrap: anywhere; }
 .playground-editor { position: relative; height: 640px; overflow: hidden; border: 1px solid #d1c9e2; border-radius: 8px; background: #fff; }
-.playground-editor:fullscreen { height: 100%; border: 0; border-radius: 0; }
 .drawio-frame { display: block; width: 100%; height: 100%; border: 0; }
-.playground-placeholder { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 24px; color: #5d6983; font-size: 14px; text-align: center; }
-#playground code { padding: 1px 5px; border-radius: 4px; background: #eef0f8; font-size: .92em; }
+/* Covers the editor (and its spinner) until a diagram has been opened. */
+.playground-placeholder { position: absolute; inset: 0; z-index: 1; display: grid; place-content: center; margin: 0; padding: 24px; background: #fff; color: #5d6983; font-size: 14px; text-align: center; }
+.playground-placeholder[hidden] { display: none; }
 @media (max-width: 800px) {
-  .playground { grid-template-columns: minmax(0, 1fr); gap: 22px; }
-  .playground-actions { margin-top: 4px; }
   .playground-editor { height: min(75vh, 620px); min-height: 440px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .has-drawio img, .drawio-edit, .playground-button { transition: none; }
+  .has-drawio img, .drawio-edit { transition: none; }
 }

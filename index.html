@@ -221,24 +221,11 @@
     </section>
 
     <section class="section-block band-muted" id="playground">
-      <h2>Try It in draw.io</h2>
-      <p class="section-intro">Every relayout result is an editable mxGraph XML file. Choose <strong>Edit in draw.io</strong> on any result above, pick an example below, or load your own <code>.drawio</code> / <code>.xml</code> file. Edits stay in your browser; download the diagram to keep them.</p>
+      <h2>Editable on draw.io</h2>
+      <p class="section-intro">Click <strong>Edit in draw.io</strong> on any of our flowchart results above to open it here. Every result is draw.io-editable mxGraph XML, so you can move blocks, reroute connectors, and restyle the diagram directly in your browser.</p>
       <div class="playground showcase-frame">
-        <aside class="playground-panel">
-          <label class="playground-label" for="drawioSample">Example diagram</label>
-          <select id="drawioSample" disabled><option>Looking for editable results&hellip;</option></select>
-          <p class="playground-label">Your own flowchart</p>
-          <button class="playground-button" id="drawioUploadButton" type="button"><i class="fas fa-upload" aria-hidden="true"></i><span>Load .drawio / .xml</span></button>
-          <input id="drawioUpload" type="file" accept=".drawio,.xml,application/xml,text/xml" hidden>
-          <p class="playground-note">Starting from a raster flowchart? Convert it with our <a href="https://github.com/ChenCXxx/OneFigure-EveryCanvas" target="_blank" rel="noopener">pipeline</a>, then load the XML here.</p>
-          <div class="playground-actions">
-            <button class="playground-button" id="drawioDownload" type="button" disabled><i class="fas fa-download" aria-hidden="true"></i><span>Download</span></button>
-            <button class="playground-button" id="drawioFullscreen" type="button"><i class="fas fa-expand" aria-hidden="true"></i><span>Fullscreen</span></button>
-          </div>
-          <p class="playground-status" id="drawioStatus" aria-live="polite"></p>
-        </aside>
         <div class="playground-editor" id="drawioHost">
-          <p class="playground-placeholder">The draw.io editor loads when this section comes into view.</p>
+          <p class="playground-placeholder" id="drawioStatus" aria-live="polite"><span>Click <strong>Edit in draw.io</strong> on one of our results above to start editing.</span></p>
         </div>
       </div>
     </section>
