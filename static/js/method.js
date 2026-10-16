@@ -17,8 +17,8 @@
   const stages = [
     { key: "overview", name: "Overview", color: "#576dc1", duration: 4.1 },
     { key: "parse", name: "(a) Parse Stage", color: "#37649d", duration: 4.8 },
-    { key: "style", name: "(b) Style Stage", color: "#a45236", duration: 4.8 },
-    { key: "layout", name: "(c) Layout Stage", color: "#6d51a1", duration: 4.8 },
+    { key: "style", name: "(b) Style Stage", color: "#995224", duration: 4.8 },
+    { key: "layout", name: "(c) Layout Stage", color: "#4b722f", duration: 4.8 },
   ];
   const viewport = document.getElementById("methodViewport");
   const tabs = [...root.querySelectorAll(".method-tab")];

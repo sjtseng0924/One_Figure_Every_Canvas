@@ -93,6 +93,8 @@ colors. The teaser retains its original grouping contour around the outputs.
 Each stage has one fixed caption; there is no bottom timeline or Replay control.
 The Play/Pause button can pause or restart the selected stage.
 Previous/Next controls and the connected stage tabs provide manual navigation.
+Selected Parse, Style, and Layout tabs use the exact light blue, orange, and
+green fills from the Overview, with matching colored progress lines.
 
 The Method player has one lavender-edged outer frame, with a divider and a
 separate warm-white caption area below the animation. Individual Method figures
@@ -101,13 +103,21 @@ teaser, results, ablations, and style transfer use a 1px black canvas outline;
 the style comparison slider has one outline around its shared canvas. The original
 colored PPT annotations are preserved within the artwork. Shared styling uses
 indigo and lavender details on warm white, with readable ink colors. Lavender
-color fields are reserved for the hero; all body sections share warm white.
+color fields stay within the header, using light lavender and visible animated
+flowchart details. The teaser and body sections share warm white. Background
+gradients always span the full width.
 Routed heading marks, short node trails, connected contribution bullets, and
 paragraph rules distinguish sections without colored bands or picture cards.
 The four hero links share a lavender base and turn deep purple on hover or
 keyboard focus. Data tables use a raised lavender-edged frame. Faint flowchart
 routes in the page margins animate small data signals; reduced-motion
 preferences keep these decorations static.
+Headings use locally hosted Space Grotesk; body text uses Manrope. Both fonts
+include their SIL Open Font License in `static/fonts/`. Result galleries have
+one light outer frame around the whole region, retaining their existing grids
+and individual black canvas outlines. Gallery navigation dots sit inside each
+frame. All gallery frames align to the same content width as the tables and
+Method player, including Style Transfer.
 
 Playback pauses when the section leaves the viewport or the browser tab is
 hidden. On phones, the figures scroll horizontally and follow the current

@@ -14,7 +14,7 @@
   <meta property="og:image:alt" content="One Figure, Every Canvas project icon">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="static/images/icon.png">
-  <meta name="theme-color" content="#f5f6fc">
+  <meta name="theme-color" content="#eae8f8">
   <meta name="citation_title" content="One Figure, Every Canvas: Editable Flowchart Relayout via Agentic Pipeline">
   <meta name="citation_author" content="Shih-Chen Tseng">
   <meta name="citation_author" content="Chih-Hsuan Chen">
@@ -28,9 +28,9 @@
   <link rel="icon" type="image/png" href="static/images/icon.png">
   <link rel="apple-touch-icon" href="static/images/icon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="static/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="static/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="static/css/fonts.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="stylesheet" href="static/css/theme.css">
@@ -45,6 +45,7 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
+  <div class="intro-region">
   <header class="site-hero">
     <div class="hero-inner">
       <h1 class="project-title"><img class="project-icon" src="static/images/icon.png" alt="" width="64" height="64"><span>One Figure, <span class="title-accent">Every Canvas</span></span></h1>
@@ -78,9 +79,11 @@
       </div>
     </div>
   </header>
+  </div>
 
   <main>
     <section class="section-block teaser-block" id="teaser">
+      <div class="showcase-frame teaser-showcase">
       <div class="teaser-carousel">
         <button type="button" class="icon-button" id="teaserPrev" title="Previous example" aria-label="Previous example"><i class="fas fa-chevron-left"></i></button>
         <div class="teaser-viewport" id="teaserViewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Diagram relayout examples"><div class="teaser-track" id="teaserGrid"></div></div>
@@ -88,8 +91,8 @@
       </div>
       <div class="teaser-dots" id="teaserTabs" aria-label="Teaser examples"></div>
       <p class="teaser-caption" id="teaserCaption">Given a single raster flowchart, our Parse, Style, and Layout agents adapt its structure, content, and appearance to different aspect ratios for papers, slides, posters, and phone previews, producing mxGraph XML that remains fully editable in draw.io for further refinement.</p>
+      </div>
     </section>
-
     <section class="section-block paper-summary band-muted" id="abstract">
       <h2>Abstract</h2>
         <div class="copy">
@@ -148,7 +151,7 @@
         <p>Aspect-ratio adaptation across ten pipeline diagrams, compared with four image-generation and diagram-editing baselines.</p>
       </div>
 
-      <div class="explorer-shell">
+      <div class="explorer-shell showcase-frame">
         <section class="method-panel ours-panel">
           <div class="method-title">
             <h4>Ours</h4>
@@ -176,19 +179,21 @@
     <section class="section-block" id="more-results">
       <h2>More Canvas Results from Ours</h2>
       <p class="section-intro">Our XML-based pipeline adapts the same ten diagrams to additional canvases: <strong>2.39:1, a cinematic widescreen aspect ratio</strong>, and <strong>1:4, an extreme portrait aspect ratio</strong>, while preserving structure and draw.io editability. VLM-driven image-generation baselines have limited support for arbitrary canvas ratios; the 1:4 target falls outside the approximately 3:1 to 1:3 range reported in our paper.</p>
+      <div class="showcase-frame gallery-showcase">
       <div class="carousel-shell">
         <button type="button" class="icon-button carousel-prev" id="morePrev" aria-label="Previous diagram" title="Previous diagram"><i class="fas fa-chevron-left"></i></button>
         <div class="carousel-viewport" id="moreViewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Additional aspect ratios"><div class="carousel-track" id="moreTrack"></div></div>
         <button type="button" class="icon-button carousel-next" id="moreNext" aria-label="Next diagram" title="Next diagram"><i class="fas fa-chevron-right"></i></button>
       </div>
       <div class="carousel-dots" id="moreDots" aria-label="Diagram selection"></div>
+      </div>
     </section>
 
     <section class="section-block band-muted" id="ablation">
       <h2>Ablation Result</h2>
       <p class="section-intro">On a balanced subset of 30 flowcharts, we study three categories: <strong>direct prompting versus multi-stage decomposition</strong>, <strong>Style Stage and Critic Agent removal</strong>, and <strong>replacing the Layout Stage with Graphviz DOT</strong>. The comparisons below correspond to the qualitative ablation figures in the paper appendix.</p>
       <div id="ablationTable"></div>
-      <div class="study-gallery">
+      <div class="study-gallery showcase-frame">
         <div class="choice-tabs" id="ablationTabs" aria-label="Ablation comparisons"></div>
         <h3 id="ablationTitle"></h3>
         <p class="gallery-description" id="ablationDescription"></p>
@@ -199,6 +204,7 @@
     <section class="section-block" id="style-transfer">
       <h2>Style Transfer Result</h2>
       <p class="section-intro">An additional reference-guided Style Transfer stage restyles a completed relayout using an unrelated reference image. Colors, typography, corners, and arrows change while diagram structure and semantic content remain intact.</p>
+      <div class="showcase-frame gallery-showcase">
       <div class="carousel-shell style-carousel">
         <button type="button" class="icon-button carousel-prev" id="stylePrev" aria-label="Previous style transfer" title="Previous style transfer"><i class="fas fa-chevron-left"></i></button>
         <div class="style-gallery" id="styleGallery"></div>
@@ -206,6 +212,7 @@
       </div>
       <div class="style-navigation">
         <div class="carousel-dots" id="styleDots" aria-label="Style transfer selection"></div>
+      </div>
       </div>
     </section>
 

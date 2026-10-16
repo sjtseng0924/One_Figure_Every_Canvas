@@ -7,13 +7,14 @@
 .method-tab strong { display: block; font-size: 14px; font-weight: 600; }
 .method-tab:hover { color: #3f5393; background: #f5f7fd; }
 .method-tab[aria-selected="true"] { background: #eaf0fc; color: var(--method-accent); }
-.method-tab[data-stage="2"][aria-selected="true"] { background: #fcf0e9; }
-.method-tab[data-stage="3"][aria-selected="true"] { background: #f0edfb; }
+.method-tab[data-stage="1"][aria-selected="true"] { background: #dae3f3; }
+.method-tab[data-stage="2"][aria-selected="true"] { background: #fbe5d6; }
+.method-tab[data-stage="3"][aria-selected="true"] { background: #e2efda; }
 .method-tab-progress { position: absolute; bottom: 0; left: 0; width: var(--tab-progress, 0%); height: 3px; background: var(--method-accent); }
 .method-tab[data-stage="0"] .method-tab-progress { background: #576dc1; }
-.method-tab[data-stage="1"] .method-tab-progress { background: #37649d; }
-.method-tab[data-stage="2"] .method-tab-progress { background: #a45236; }
-.method-tab[data-stage="3"] .method-tab-progress { background: #6d51a1; }
+.method-tab[data-stage="1"] .method-tab-progress { background: #4472c4; }
+.method-tab[data-stage="2"] .method-tab-progress { background: #ed7d31; }
+.method-tab[data-stage="3"] .method-tab-progress { background: #70ad47; }
 .method-controls { display: flex; align-items: center; gap: 9px; padding: 0 14px; }
 .method-control { display: grid; place-items: center; width: 32px; height: 32px; padding: 6px; border: 1px solid #aebbd5; border-radius: 50%; color: #4c608c; background: #fff; }
 .method-control:hover { border-color: #7189c3; background: #eef3fc; }

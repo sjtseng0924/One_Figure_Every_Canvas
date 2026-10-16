@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="still" viewBox="0 0 1600 680" fill="none">
   <style>@keyframes route-signal{to{stroke-dashoffset:-950}}@keyframes node-beacon{0%,100%{opacity:.45}50%{opacity:1}}.route-signal{stroke-dasharray:8 942;animation:route-signal 14s linear infinite}.route-node{animation:node-beacon 5s ease-in-out infinite}.route-node:nth-child(even){animation-delay:-2.5s}:root:target .route-signal,:root:target .route-node{animation:none}@media(prefers-reduced-motion:reduce){.route-signal,.route-node{animation:none}}</style>
-  <g stroke="#9881c0" stroke-width="1.1" opacity=".48">
+  <g stroke="#8663b2" stroke-width="1.3" opacity=".74">
     <path d="M-40 145H154Q178 145 178 169V252Q178 276 202 276H330M-80 523H195Q219 523 219 499V400Q219 376 243 376H333"/>
     <path d="M136 275V77Q136 53 160 53H412M136 376V605Q136 629 160 629H441"/>
     <path d="M1268 271H1364Q1388 271 1388 247V161Q1388 137 1412 137H1660M1268 377H1438Q1462 377 1462 401V500Q1462 524 1486 524H1650"/>
