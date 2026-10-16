@@ -505,9 +505,10 @@ function renderResearchTable(id, config) {
   const container = document.getElementById(id);
   container.className = "table-block";
   container.innerHTML = `
-    <div class="table-scroll" tabindex="0" role="region" aria-label="${config.title}">
-      <table class="research-table" aria-describedby="${id}Note">
-        <caption>${config.title}</caption>
+    <p class="table-caption" id="${id}Title">${config.title}</p>
+    <p class="table-hint" aria-hidden="true">Swipe sideways to see all metrics &rarr;</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="${id}Title">
+      <table class="research-table" aria-labelledby="${id}Title" aria-describedby="${id}Note">
         <thead>
           <tr class="metric-groups"><th></th>${config.xml ? '<th scope="col">Validity</th>' : ""}<th colspan="3" scope="colgroup">Correctness (%)</th><th colspan="2" scope="colgroup">Visual Quality</th><th scope="col">Score</th></tr>
           <tr><th scope="col">Method</th>${headers.map((header) => `<th scope="col">${header.label} <span aria-label="${header.lower ? "lower is better" : "higher is better"}">${header.lower ? "&darr;" : "&uarr;"}</span></th>`).join("")}</tr>

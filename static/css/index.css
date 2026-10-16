@@ -159,7 +159,7 @@ h2 { text-align: left; font-size: 32px; font-weight: 600; margin-bottom: 18px; }
 .table-block { padding: 20px; background: #fff; border: 1px solid #e0e6ec; border-radius: 8px; box-shadow: 0 5px 18px rgba(35, 47, 65, .035); }
 .table-scroll { overflow-x: auto; }
 .research-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 12px; color: #354054; font-variant-numeric: tabular-nums; line-height: 1.55; }
-.research-table caption { text-align: left; font-size: 15px; font-weight: 500; color: var(--ink); padding: 0 0 24px; }
+.table-caption { margin: 0; text-align: left; font-size: 15px; font-weight: 500; line-height: 1.55; color: var(--ink); padding: 0 0 24px; }
 .research-table th, .research-table td { text-align: right; padding: 11px 12px; border-bottom: 1px solid #e8edf2; white-space: nowrap; }
 .research-table th:first-child { text-align: left; }
 .research-table tbody th { font-weight: 400; }

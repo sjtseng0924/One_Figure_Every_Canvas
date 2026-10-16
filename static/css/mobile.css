@@ -1,0 +1,61 @@
+/* Phone layout: loaded last so it can settle the earlier, layered breakpoints. */
+.table-hint, .tap-hint { display: none; }
+
+@media (max-width: 640px) {
+  /* Carousels: arrows sit above the slide instead of covering the figures. */
+  .carousel-shell, .teaser-carousel { padding-top: 46px; }
+  .carousel-shell > .icon-button, .teaser-carousel > .icon-button { top: 0; width: 36px; height: 36px; transform: none; }
+  .carousel-prev, #teaserPrev { left: auto; right: 44px; }
+  .carousel-next, #teaserNext { right: 0; }
+  .teaser-slide { padding-top: 0; }
+  .teaser-dot { position: relative; }
+  .teaser-dot::after { content: ""; position: absolute; inset: -8px -4px; }
+
+  /* Method walkthrough: fit the overview to the screen and stack each stage,
+     with every critic's feedback directly under its own iteration. */
+  .method-viewport { overflow-x: hidden; }
+  .method-scene, .method-stage-style { min-width: 0; }
+  .method-scene { padding: 18px 14px 22px; }
+  .method-stage-overview { padding: 14px 6px; }
+  .method-stage-parse, .method-stage-style, .method-stage-layout { display: flex; flex-direction: column; gap: 22px; }
+  .method-scene .method-iterations, .method-scene .method-feedback-row { display: contents; }
+  .method-original, .method-feedback-row { position: static; width: auto; }
+  .method-original { margin: 0; }
+  .method-original img { width: 100%; max-height: 260px; }
+  .method-iteration[data-iteration-index="0"] { order: 1; }
+  .method-feedback[data-iteration="0"] { order: 2; }
+  .method-iteration[data-iteration-index="1"] { order: 3; }
+  .method-feedback[data-iteration="1"] { order: 4; }
+  .method-iteration[data-iteration-index="2"] { order: 5; }
+  .method-feedback[data-iteration="2"] { order: 6; }
+  .method-iteration-heading { margin-bottom: 10px; }
+  .method-art, .method-stage-style .method-art, .method-stage-layout .method-art { height: auto; min-height: 0; }
+  .method-stage-style .method-art > img, .method-stage-layout .method-art > img { height: auto; max-height: 480px; }
+  .method-zooms { height: auto; margin: 10px 0 0; }
+  .method-zooms img { max-height: 140px; }
+  .method-feedback { padding-top: 14px; }
+
+  /* Tables: keep the method column pinned while the metrics scroll. */
+  .table-hint { display: block; margin: -12px 0 10px; color: #5c6880; font-size: 12px; }
+  .table-caption { padding-bottom: 20px; }
+  .research-table { min-width: 0; border-collapse: separate; border-spacing: 0; font-size: 11.5px; }
+  .research-table th, .research-table td { padding: 9px 8px; }
+  .research-table tr > :first-child { position: sticky; left: 0; z-index: 1; min-width: 124px; max-width: 150px; white-space: normal; background: #fff; box-shadow: inset -1px 0 0 #e5e8f0; }
+  .research-table .ours-row > :first-child { background: #edf0fb; }
+  .research-table .ours-row > * { border-top: 0; }
+
+  /* Result figures: size to the image instead of a fixed-height box. */
+  .tap-hint { display: block; margin: 6px 0 0; color: #5c6880; font-size: 13px; }
+  .ratio-grid .image-holder, .ratio-grid .ratio-card.special .image-holder, .ratio-grid .image-holder .figure-media { height: auto; }
+  .ratio-grid .result-image, .ratio-grid .swap-media .result-image { max-height: 460px; }
+  #ablationTitle, #ablationDescription { min-height: 0; }
+  #ablationGallery .figure-media { height: auto; }
+  #ablationGallery img { max-height: 460px; }
+
+  .bibtex-block pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+}
+
+@media (max-width: 480px) {
+  .hero-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; max-width: 360px; margin-left: auto; margin-right: auto; }
+  .pill-button { min-width: 0; padding: 7px 4px; gap: 5px; }
+}

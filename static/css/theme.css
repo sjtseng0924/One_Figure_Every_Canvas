@@ -1,7 +1,7 @@
 /* Open figures on light paper, with small routed-node details. */
 :root { --ink: #25314b; --muted: #56627b; --accent: #4f5bb4; --line: #dde2ed; --paper: #fffefd; --body-font: "Manrope", "Segoe UI", Arial, sans-serif; --display-font: "Space Grotesk", "Manrope", "Segoe UI", sans-serif; }
 body { color: var(--ink); background: var(--paper); font-family: var(--body-font); font-variant-ligatures: none; -webkit-font-smoothing: antialiased; }
-h1, h2, h3, h4, .research-table caption { font-family: var(--display-font); }
+h1, h2, h3, h4, .table-caption { font-family: var(--display-font); }
 ::selection { color: #334b81; background: #e0e7ff; }
 a { text-underline-offset: 4px; }
 button, a, input { outline-color: #687ec7; }
@@ -84,7 +84,7 @@ h3 { color: #3c4968; letter-spacing: -.02em; }
 .table-block { position: relative; padding: 24px; border: 1px solid #d1c9e2; border-radius: 12px; background: #fff; box-shadow: 0 5px 0 #e6dff0, 0 16px 34px #54416e0a; }
 .table-block::before { content: ""; position: absolute; top: -1px; left: 24px; width: 64px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #9d85c2, #ddd2ed); }
 .research-table { color: #42506b; }
-.research-table caption { color: #4b5b80; font-weight: 600; }
+.table-caption { color: #4b5b80; font-weight: 600; }
 .research-table th, .research-table td { border-bottom-color: #e5e8f0; }
 .research-table .metric-groups th { color: #5d6983; letter-spacing: .06em; }
 .research-table thead tr:last-child th, .research-table tr:last-child > * { border-bottom-color: #aebbd9; }
