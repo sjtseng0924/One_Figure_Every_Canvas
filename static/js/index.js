@@ -354,10 +354,13 @@ function renderMoreResults() {
     const slide = document.createElement("article");
     slide.className = "carousel-slide more-slide";
     slide.appendChild(createOriginalCard(item.id));
-    slide.appendChild(createRatioCard("2.39:1", oursPath(item.id, "2.39_1")));
+    const wide = createRatioCard("2.39:1", oursPath(item.id, "2.39_1"));
     const tall = createRatioCard("1:4", oursPath(item.id, "1_4"));
     tall.classList.add("more-tall");
-    slide.appendChild(tall);
+    [[wide, "2.39_1"], [tall, "1_4"]].forEach(([card, ratio]) => {
+      window.attachDrawioEdit?.(card.querySelector(".figure-media"), oursPath(item.id, ratio));
+      slide.appendChild(card);
+    });
     track.appendChild(slide);
   });
   setupImageCarousel("more", CASES.length);
@@ -654,9 +657,47 @@ window.addEventListener("scroll", () => {
   } else {
     scrollButton.classList.remove("visible");
   }
-});
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  document.querySelector(".site-nav")?.style.setProperty("--progress", scrollable > 0 ? String(window.scrollY / scrollable) : "0");
+}, { passive: true });
+
+// Highlight the nav link of the section in the middle of the viewport.
+function setupSiteNav() {
+  const container = document.querySelector(".site-nav-links");
+  if (!container || !("IntersectionObserver" in window)) return;
+  const links = [...container.querySelectorAll("a")];
+  const setActive = (id) => links.forEach((link) => {
+    if (link.getAttribute("href") !== `#${id}`) { link.removeAttribute("aria-current"); return; }
+    link.setAttribute("aria-current", "location");
+    if (container.scrollWidth > container.clientWidth) {
+      container.scrollTo({ left: link.offsetLeft - (container.clientWidth - link.offsetWidth) / 2, behavior: "smooth" });
+    }
+  });
+  // Phone menu: the hamburger opens the links as a panel; a link, Escape, or a tap outside closes it.
+  const nav = container.closest(".site-nav");
+  const toggle = nav.querySelector(".site-nav-toggle");
+  const setOpen = (open) => {
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close section menu" : "Open section menu");
+  };
+  toggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+  links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && nav.classList.contains("is-open")) { setOpen(false); toggle.focus(); }
+  });
+  document.addEventListener("click", (event) => { if (!nav.contains(event.target)) setOpen(false); });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => { if (entry.isIntersecting) setActive(entry.target.id); });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  links.forEach((link) => {
+    const section = document.querySelector(link.getAttribute("href"));
+    if (section) observer.observe(section);
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+  setupSiteNav();
   renderTeasers();
   document.getElementById("teaserPrev").addEventListener("click", () => selectTeaser(currentTeaser - 1));
   document.getElementById("teaserNext").addEventListener("click", () => selectTeaser(currentTeaser + 1));

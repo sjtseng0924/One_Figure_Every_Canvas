@@ -1,16 +1,21 @@
 /* "Edit in draw.io" on result figures, and the embedded editor section. */
 .has-drawio { position: relative; }
-.has-drawio img { transition: opacity .16s; }
-.has-drawio:hover img { opacity: .55; }
-.drawio-edit { position: absolute; top: 50%; left: 50%; z-index: 2; display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border: 1px solid #59318a; border-radius: 999px; background: #59318a; color: #fff; font-size: 12px; font-weight: 600; line-height: 1.2; white-space: nowrap; box-shadow: 0 6px 18px #2b1a4a33; opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(.96); transition: opacity .16s, transform .16s; }
-.has-drawio:hover .drawio-edit, .drawio-edit:focus-visible { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%); }
-.drawio-edit:hover { background: #47266f; }
-/* Touch screens have no hover: keep a compact icon button in the corner. */
-@media (hover: none) {
-  .has-drawio:hover img { opacity: 1; }
-  .drawio-edit, .has-drawio:hover .drawio-edit { top: auto; left: auto; right: 6px; bottom: 6px; width: 32px; height: 32px; justify-content: center; padding: 0; opacity: .94; pointer-events: auto; transform: none; }
-  .drawio-edit span { display: none; }
+/* Always visible, pinned to the image's bottom-right corner (drawio.js measures the image). */
+.drawio-edit { position: absolute; right: var(--edit-right, 8px); bottom: var(--edit-bottom, 8px); z-index: 2; display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border: 1px solid #59318a; border-radius: 999px; background: #59318a; color: #fff; font-size: 11.5px; font-weight: 600; line-height: 1.2; white-space: nowrap; box-shadow: 0 4px 12px #2b1a4a40; transition: background .16s, transform .16s; }
+.drawio-edit:hover, .drawio-edit:focus-visible { background: #47266f; transform: translateY(-1px); }
+/* Hidden until wanted, and the image itself is left untouched: mouse screens show the button
+   while the figure is hovered, touch screens after the figure is tapped (drawio.js), and the
+   keyboard whenever the button has focus. */
+.drawio-edit { opacity: 0; pointer-events: none; transition: opacity .16s, background .16s, transform .16s; }
+.has-drawio.is-revealed .drawio-edit, .drawio-edit:focus-visible { opacity: 1; pointer-events: auto; }
+@media (hover: hover) and (pointer: fine) {
+  .has-drawio:hover .drawio-edit { opacity: 1; pointer-events: auto; }
 }
+@media (max-width: 480px) {
+  .drawio-edit { gap: 5px; padding: 4px 9px; font-size: 10.5px; }
+}
+/* Compact size for narrow canvases (1:4 and similar); drawio.js sets .is-narrow. */
+.has-drawio.is-narrow .drawio-edit { gap: 3px; padding: 3px 6px; font-size: 9px; }
 
 .playground-editor { position: relative; height: 640px; overflow: hidden; border: 1px solid #d1c9e2; border-radius: 8px; background: #fff; }
 .drawio-frame { display: block; width: 100%; height: 100%; border: 0; }
@@ -21,5 +26,6 @@
   .playground-editor { height: min(75vh, 620px); min-height: 440px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .has-drawio img, .drawio-edit { transition: none; }
+  .drawio-edit { transition: none; }
+  .drawio-edit:hover, .drawio-edit:focus-visible { transform: none; }
 }

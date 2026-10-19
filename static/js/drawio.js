@@ -78,8 +78,33 @@
       });
       media.classList.add("has-drawio");
       media.appendChild(button);
+      // The image is centered inside a larger box, so pin the button to the image's own corner.
+      const img = media.querySelector("img");
+      if (!img) return;
+      const place = () => {
+        if (!img.offsetWidth) return;
+        // Narrow canvases such as 1:4 get a compact button so it stays inside the image.
+        media.classList.toggle("is-narrow", img.offsetWidth < 132);
+        media.style.setProperty("--edit-right", `${media.clientWidth - img.offsetLeft - img.offsetWidth + 8}px`);
+        media.style.setProperty("--edit-bottom", `${media.clientHeight - img.offsetTop - img.offsetHeight + 8}px`);
+      };
+      img.addEventListener("load", place);
+      new ResizeObserver(place).observe(media);
+      new ResizeObserver(place).observe(img);
+      place();
     });
   };
+
+  // Touch screens have no hover: tapping a result reveals its button, tapping elsewhere hides it.
+  // A swipe on a carousel is not a tap, so browsing results never reveals buttons by accident.
+  document.addEventListener("click", (event) => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const media = event.target.closest(".has-drawio");
+    document.querySelectorAll(".has-drawio.is-revealed").forEach((item) => {
+      if (item !== media) item.classList.remove("is-revealed");
+    });
+    if (media && !event.target.closest(".drawio-edit")) media.classList.toggle("is-revealed");
+  });
 
   window.addEventListener("message", (event) => {
     if (!state.frame || event.source !== state.frame.contentWindow || event.origin !== ORIGIN) return;
