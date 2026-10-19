@@ -106,13 +106,6 @@ h3 { color: #3c4968; letter-spacing: -.02em; }
 .copy-bibtex-btn:hover { background: #e7edf9; }
 .scroll-to-top { border: 1px solid #d8e0f0; border-radius: 8px; background: #ffffffeb; color: #536c9f; box-shadow: none; }
 .footer { color: #606d87; background: var(--paper); }
-/* Routed accents live in the page margins, clear of figures and text. */
-@media (min-width: 1280px) {
-  .section-block:not(.teaser-block)::before, .section-block:not(.teaser-block)::after { content: ""; position: absolute; z-index: -1; width: min(132px, calc((100vw - 1140px) / 2)); height: 371px; background: url('../images/margin-route.svg') left top / 132px 371px no-repeat; opacity: .6; pointer-events: none; }
-  .section-block:not(.teaser-block)::before { top: 30px; left: 0; }
-  .section-block:not(.teaser-block)::after { right: 0; bottom: 24px; transform: rotate(180deg); opacity: .42; }
-  .section-block:nth-child(3n)::before { transform: scaleY(-1); }
-}
 @media (max-width: 800px) {
   .site-hero { padding: 65px 24px 49px; }
   .hero-inner h1 { font-size: 42px; }
@@ -150,7 +143,6 @@ h3 { color: #3c4968; letter-spacing: -.02em; }
 }
 @media (prefers-reduced-motion: reduce) {
   .intro-region::after { background-image: url('../images/graph-field.svg#still'); }
-  .section-block:not(.teaser-block)::before, .section-block:not(.teaser-block)::after { background-image: url('../images/margin-route.svg#still'); }
   .pill-button, .choice-tab, .teaser-dot, h2::before { transition: none; }
   .pill-button:hover, h2:hover::before { transform: none; }
 }

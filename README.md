@@ -109,9 +109,10 @@ gradients always span the full width.
 Routed heading marks, short node trails, connected contribution bullets, and
 paragraph rules distinguish sections without colored bands or picture cards.
 The four hero links share a lavender base and turn deep purple on hover or
-keyboard focus. Data tables use a raised lavender-edged frame. Faint flowchart
-routes in the page margins animate small data signals; reduced-motion
-preferences keep these decorations static.
+keyboard focus. Data tables use a raised lavender-edged frame. The hero uses
+structured, monochrome flowchart branches with small moving signals and no colored dots.
+Body-section margins have no diagram decorations; heading icons are retained.
+Reduced-motion preferences keep the hero decoration static.
 Headings use locally hosted Space Grotesk; body text uses Manrope. Both fonts
 include their SIL Open Font License in `static/fonts/`. Result galleries have
 one light outer frame around the whole region, retaining their existing grids
