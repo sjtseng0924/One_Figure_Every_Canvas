@@ -77,6 +77,11 @@ main > .section-block:nth-child(even) .method-player { background-color: #fff; }
   main > .section-block { padding-top: 60px; padding-bottom: 60px; }
   main { --pad-top: 60px; }
 }
+/* Phones: the routed flowchart lines behind the hero title compete with the text, so only the
+   soft color glows stay. */
+@media (max-width: 640px) {
+  .intro-region::after { display: none; }
+}
 @media (max-width: 480px) {
   :root { --nav-h: 54px; }
   .site-nav { padding: 0 12px; }
